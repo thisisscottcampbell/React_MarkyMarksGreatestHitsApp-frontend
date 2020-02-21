@@ -13,7 +13,8 @@ export default class MovieList extends Component {
       this.setState({movieArray: jsonData.body})
     }
 
-    render(){
+    
+     render(){
       const JSONmovies = this.state.movieArray;
       console.log({JSONmovies});
       const mappedMovies = JSONmovies.map((object, index) => {
