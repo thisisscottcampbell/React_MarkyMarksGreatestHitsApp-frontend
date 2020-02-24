@@ -18,6 +18,7 @@ export default class MovieList extends Component {
         const mappedMovies = this.state.movieArray.map((object, index)  => <Link to={`movieArray/${object.movie}`}>
         <MovieCard movie={object} key={index} />
       </Link>)
+      
 
       return (
           <main>
