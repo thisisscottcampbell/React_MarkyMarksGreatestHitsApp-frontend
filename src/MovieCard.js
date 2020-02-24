@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
+import './moviecard.css'
 
 export default class MovieCard extends Component {
   render() {
@@ -7,7 +8,7 @@ export default class MovieCard extends Component {
       <div className ="movie-card">
         <h1>{this.props.movieCard.name}</h1>
         <p>Type: {this.props.movieCard.type}</p>
-        <p>HP: {this.props.movieCard.year}</p>
+        {/* <p>HP: {this.props.movieCard.year}</p> */}
         <img src= {this.props.movieCard.img} alt="url" />
         <p>Year: {this.props.movieCard.year}</p>  
         <p>Rating: {this.props.movieCard.rating}</p>  

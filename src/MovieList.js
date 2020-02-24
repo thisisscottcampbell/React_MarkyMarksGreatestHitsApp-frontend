@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import MovieCard from './MovieCard.js';
+import CreateMovie from './CreateMovie.js';
 
 export default class MovieList extends Component {
 
@@ -21,10 +22,16 @@ export default class MovieList extends Component {
       })
 
       return (
-          <main>
+        <main>
+        <div>
+          <CreateMovie />
+        </div>
+        <div className="movies-box">
             <ul>
+              
               {mappedMovies}
             </ul>
+            </div>
           </main>
     );
   };
