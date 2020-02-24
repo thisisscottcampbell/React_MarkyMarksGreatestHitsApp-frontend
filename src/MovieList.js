@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
+import { Link } from 'react-router-dom'
 import MovieCard from './MovieCard.js';
 
 export default class MovieList extends Component {
@@ -13,12 +14,10 @@ export default class MovieList extends Component {
       this.setState({movieArray: jsonData.body})
     }
 
-     render(){
-      const JSONmovies = this.state.movieArray;
-      console.log({JSONmovies});
-      const mappedMovies = JSONmovies.map((object, index) => {
-        return <MovieCard movieCard={object} key={index} />
-      })
+      render(){
+        const mappedMovies = this.state.movieArray.map((object, index)  => <Link to={`movieArray/${object.movie}`}>
+        <MovieCard movie={object} key={index} />
+      </Link>)
 
       return (
           <main>
