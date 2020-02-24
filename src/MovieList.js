@@ -13,7 +13,6 @@ export default class MovieList extends Component {
       this.setState({movieArray: jsonData.body})
     }
 
-    
      render(){
       const JSONmovies = this.state.movieArray;
       console.log({JSONmovies});
