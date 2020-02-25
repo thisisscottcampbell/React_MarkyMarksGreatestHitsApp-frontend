@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import Header from './shared/Header.js';
 
-export default class CreateCat extends Component {
+export default class CreateMovie extends Component {
     state = {
         types: [],
         fresh: true,
@@ -27,11 +27,11 @@ export default class CreateCat extends Component {
         this.setState({ year: Number(e.target.value) })
     }
 
-    handleLivesChange = (e) => {
+    handleRatingChange = (e) => {
         this.setState({ rating: Number(e.target.value) })
     }
 
-    handleSidekickChange = (e) => {
+    handleFreshChange = (e) => {
         const actualBool = e.target.value === 'false' 
             ? false 
             : true
@@ -95,7 +95,7 @@ export default class CreateCat extends Component {
                     <br/>
                     <label>
                         Rating: 
-                        <input type='number' onChange={this.handleLivesChange} />
+                        <input type='number' onChange={this.handleRatingChange} />
                     </label>
                     <br/>
                     <label>
@@ -106,7 +106,7 @@ export default class CreateCat extends Component {
 
                     <label>
                         Is Fresh: 
-                        <select onChange={this.handleSidekickChange}>
+                        <select onChange={this.handleFreshChange}>
                             <option value="true" >True</option>
                             <option value="false" >False</option>
                         </select>
