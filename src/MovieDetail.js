@@ -10,6 +10,7 @@ export default class MovieDetail extends Component {
     const movieInfo= await request.get(`https://damp-falls-48537.herokuapp.com/data/${this.props.match.params.movieId}`);
   
 
+    
     if (movieInfo.body) {
       this.setState({movies: movieInfo.body[0]})
     }
