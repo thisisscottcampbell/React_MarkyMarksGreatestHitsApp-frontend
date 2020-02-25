@@ -44,6 +44,12 @@ export default class CreateMovie extends Component {
         this.setState({ image: e.target.value })
     }
 
+    handleDelete = async () => {
+        await request.delete(`https://damp-falls-48537.herokuapp.com//data/${this.props.match.params.movieId}`);
+
+        this.props.history.push('/');
+    }
+
     handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -96,7 +102,12 @@ export default class CreateMovie extends Component {
                     <br/>
                     <label>
                         Rating: 
-                        <input type='number' onChange={this.handleRatingChange} />
+                            <select onChange={this.handleRatingChange}>
+                            <option value="R">R</option>
+                            <option value="PG-13">PG-13</option>
+                            <option value="PG">PG</option>
+                            <option value="G">G</option>
+                        </select>
                     </label>
                     <br/>
                     <label>
@@ -115,7 +126,7 @@ export default class CreateMovie extends Component {
                     <br />
                 <button>Submit</button>
                 </form>
-            </div>
+                </div>
         )
     }
 }
