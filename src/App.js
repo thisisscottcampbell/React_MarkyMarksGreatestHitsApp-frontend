@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Route, 
   Switch,
-  Link,
+  //Link,
   BrowserRouter as Router, 
 } from 'react-router-dom';
 import MovieList from './MovieList.js';
@@ -17,9 +17,11 @@ function App() {
       </header>
       <Router>
         <main>
-          <MovieList />
-          <Route exact path="/movieArray/:movie" component={MovieDetail} />
-        </main>
+          <Switch>
+            <Route exact path="/" component={MovieList} />
+            <Route exact path="/movieArray/:movieId" component={MovieDetail} />
+          </Switch>
+        </main>    
       </Router>
     </div>
   );
