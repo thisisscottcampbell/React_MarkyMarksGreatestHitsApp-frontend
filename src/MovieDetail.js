@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { getMovie } from './getMovies'
 import MovieCard from './MovieCard'
-import request from 'superagent'
+
 
 
 export default class MovieDetail extends Component {

@@ -4,6 +4,7 @@ import Header from './shared/Header.js';
 
 export default class CreateMovie extends Component {
     state = {
+        name: "",
         types: [],
         fresh: true,
         type: 1,
@@ -53,7 +54,7 @@ export default class CreateMovie extends Component {
             img: this.state.image,
             year: this.state.year,
             rating: this.state.rating,
-            fresh: this.state.fresh,
+            fresh: this.state.fresh
             
         }
 
