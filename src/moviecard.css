@@ -1,0 +1,26 @@
+.movie-card {
+
+  
+        display: inline-block;
+        flex-direction: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: black 1px ;
+        height: 500px;
+        width: 250px;
+        min-width: 300px;
+        border: 1px solid rgb(240, 24, 24);
+        background-color: rgb(255, 245, 189);
+        margin-top: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        padding: 0px;
+      
+    }
+.posters {
+    height: 250px;
+    width: 200px;
+}
