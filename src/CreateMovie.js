@@ -9,7 +9,7 @@ export default class CreateMovie extends Component {
         fresh: true,
         type: 1,
         rating: "R"
-        //can leave the return down below blank and leave a balnk string
+        //can leave the return down below blank and leave a balnk string here where we are defining state.  INITIATE UNDEFINED STATE.
     };
 
     componentDidMount = async () => {
