@@ -8,6 +8,8 @@ export default class CreateMovie extends Component {
         types: [],
         fresh: true,
         type: 1,
+        rating: "R"
+        //can leave the return down below blank and leave a balnk string
     };
 
     componentDidMount = async () => {
@@ -29,7 +31,7 @@ export default class CreateMovie extends Component {
     }
 
     handleRatingChange = (e) => {
-        this.setState({ rating: Number(e.target.value) })
+        this.setState({ rating: e.target.value })
     }
 
     handleFreshChange = (e) => {
@@ -44,17 +46,12 @@ export default class CreateMovie extends Component {
         this.setState({ image: e.target.value })
     }
 
-    handleDelete = async () => {
-        await request.delete(`https://damp-falls-48537.herokuapp.com//data/${this.props.match.params.movieId}`);
-
-        this.props.history.push('/');
-    }
-
     handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(this.state.rating, 'handleSubmit')
 
         const newMovies = {
-            id: this.state.id,
+            // id: this.state.id,
             name: this.state.name,
             type: this.state.type,
             img: this.state.image,
@@ -63,7 +60,7 @@ export default class CreateMovie extends Component {
             fresh: this.state.fresh
             
         }
-
+console.log(newMovies);
         const storedMovies = await request.post('https://damp-falls-48537.herokuapp.com/data', newMovies);
 
 
@@ -73,6 +70,7 @@ export default class CreateMovie extends Component {
     }
 
     render() {
+        console.log(this.state.rating);
         return (
             <div>
             <section>

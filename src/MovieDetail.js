@@ -13,8 +13,8 @@ export default class MovieDetail extends Component {
     const movieInfo = await getMovie(this.props.match.params.movieId);
     
     if (movieInfo.body) { this.setState({ movie: movieInfo.body[0] }) }
-    
     console.log(this.state.movie);
+    
   }
   
   handleDelete = async () => {
